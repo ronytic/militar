@@ -13,7 +13,8 @@ $pdf=new PDF("P","mm","letter");
 
 $pdf->AddPage();
 mostrarI(array("Nombre"=>$pro['nombre'],
-				"Cantidad por Soldado"=>$pro['cantidad']." Kg."
+				"Cantidad por Soldado"=>$pro['cantidad']." Kg.",
+				"Calorias"=>$pro['calorias']
 			));
 
 /*$foto="../foto/".$emp['foto'];

@@ -24,6 +24,9 @@ include_once '../../cabecerahtml.php';
 					<tr>
 						<td><?php campos("Cantidad en Kg por Soldado","cantidad","text",$pro['cantidad']);?> Kg.</td>
 					</tr>
+                    <tr>
+						<td><?php campos("Calorias","calorias","text",$pro['calorias']);?></td>
+					</tr>
 					<tr><td><?php campos("Modificar","guardar","submit");?></td><td></td></tr>
 				</table>
                 </form>
