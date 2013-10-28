@@ -12,6 +12,7 @@ $valores=array("usuario"=>"'$usuario'",
 			"materno"=>"'$materno'",
 			"nivel"=>"'$nivel'",
 			"ci"=>"'$ci'",
+			"grado"=>"'$grado'",
 			"cargo"=>"'$cargo'",
 			"obs"=>"'$observacion'"
 			);

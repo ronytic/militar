@@ -30,6 +30,7 @@ include_once '../cabecerahtml.php';
                     </tr>
                     <tr>
                     	<td><?php campos("Ci","ci","text",$usu['ci'],0,array("size"=>30));?></td>
+                        <td><?php campos("Grado","grado","text",$usu['grado'],0,array("size"=>30));?></td>
                     </tr>
                     <tr>
 						<td><?php campos("Cargo","cargo","text",$usu['cargo'],0,array("size"=>30));?></td>

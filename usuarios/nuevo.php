@@ -25,6 +25,7 @@ include_once $folder.'cabecerahtml.php';
             </tr>
             <tr>
             	<td><?php campos("Ci","ci","text","",0,array("size"=>30));?></td>
+                <td><?php campos("Grado","grado","text","",0,array("size"=>30));?></td>
             </tr>
             <tr>
                 <td><?php campos("Cargo","cargo","text","",0,array("size"=>30));?></td>

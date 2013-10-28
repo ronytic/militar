@@ -7,7 +7,7 @@ if (!empty($_POST)) {
 	${$narchivo}=new $narchivo;
 	extract($_POST);
 	$datos=${$narchivo}->mostrarTodo("nombre LIKE '%$nombre%' and paterno LIKE '%$paterno%' and materno LIKE '%$materno%' and nivel!=1");
-	$titulo=array("usuario"=>"Usuario","nombre"=>"Nombre","paterno"=>"Paterno","materno"=>"Materno","ci"=>"CI","cargo"=>"Cargo");
+	$titulo=array("usuario"=>"Usuario","nombre"=>"Nombre","paterno"=>"Paterno","materno"=>"Materno","ci"=>"CI","grado"=>"Grado","cargo"=>"Cargo");
 	listadoTabla($titulo,$datos,1,"modificar.php","eliminar.php","ver.php");
 }
 ?>
