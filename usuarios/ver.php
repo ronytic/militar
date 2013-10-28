@@ -21,6 +21,8 @@ mostrarI(array("Usuario"=>$dato['usuario'],
 				"Nombres"=>$dato['nombre'],
 				"Paterno"=>$dato['paterno'],
 				"Materno"=>$dato['materno'],
+				"C.I."=>$dato['ci'],
+				"Cargo"=>$dato['cargo'],
 				"Nivel"=>$nivel,
 				"Observaciones"=>$dato['obs'],
 			));

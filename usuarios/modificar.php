@@ -29,7 +29,10 @@ include_once '../cabecerahtml.php';
                     	<td><?php campos("Materno","materno","text",$usu['materno'],0,array("required"=>"required","size"=>30));?></td>
                     </tr>
                     <tr>
-						<td><?php campos("Email","email","text",$usu['usuario'],0,array("size"=>30));?></td>
+                    	<td><?php campos("Ci","ci","text",$usu['ci'],0,array("size"=>30));?></td>
+                    </tr>
+                    <tr>
+						<td><?php campos("Cargo","cargo","text",$usu['cargo'],0,array("size"=>30));?></td>
 						<td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"),"","",$usu['nivel']);?></td>
 					</tr>
 					<tr>

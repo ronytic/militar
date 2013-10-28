@@ -24,7 +24,10 @@ include_once $folder.'cabecerahtml.php';
             	<td><?php campos("Materno","materno","text","",0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>
-                <td><?php campos("Email","email","text","",0,array("size"=>30));?></td>
+            	<td><?php campos("Ci","ci","text","",0,array("size"=>30));?></td>
+            </tr>
+            <tr>
+                <td><?php campos("Cargo","cargo","text","",0,array("size"=>30));?></td>
                 <td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"));?></td>
             </tr>
             <tr>

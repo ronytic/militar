@@ -11,6 +11,8 @@ $valores=array("usuario"=>"'$usuario'",
 			"paterno"=>"'$paterno'",
 			"materno"=>"'$materno'",
 			"nivel"=>"'$nivel'",
+			"ci"=>"'$ci'",
+			"cargo"=>"'$cargo'",
 			"obs"=>"'$observacion'"
 			);
 if($password!=""){$valores=array_merge($valores,array("password"=>"MD5('$password')"));}
