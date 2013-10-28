@@ -75,11 +75,11 @@ $usu2=array_shift($usuarios->mostrarTodo("nivel=2"));
 $pdf->CuadroCuerpoPersonalizado(90,$usu4['nombre']." ".$usu4['paterno']." ".$usu4['materno'],0,"C",0,"B");
 $pdf->CuadroCuerpoPersonalizado(90,$usu3['nombre']." ".$usu3['paterno']." ".$usu3['materno'],0,"C",0,"B");
 $pdf->ln();
-$pdf->CuadroCuerpo(90,"Encargado de Clase 1",0,"C",0);
-$pdf->CuadroCuerpo(90,"Jefe de Servicio",0,"C",0);
+$pdf->CuadroCuerpo(90,$usu4['cargo'],0,"C",0);
+$pdf->CuadroCuerpo(90,$usu3['cargo'],0,"C",0);
 $pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(180,$usu2['nombre']." ".$usu2['paterno']." ".$usu2['materno'],0,"C",0,"B");
 $pdf->ln();
-$pdf->CuadroCuerpo(180,"Comandante del Instituto Técnico P.P.E.",0,"C",0);
+$pdf->CuadroCuerpo(180,$usu2['cargo'],0,"C",0);
 $pdf->Output();
 ?>
