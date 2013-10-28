@@ -9,18 +9,18 @@ $_SESSION['subm']=0;
 <div class="grid_6">
     <div class="contenido">
     <fieldset class="centrar">
-		<a class="botoninfo">Visión</a>
+		<a class="botoninfo">MISIÓN</a>
         <hr />
-        asdasdasdasdas asd ajsdgha dgjag djhsg djhasg djhagsd jhasgdjhasg djhag sdjg
+        <p><center>LA SUB SECCION DE CLASE I PROPORCIONARA APOYO LOGISTICO A LA UNIDADES  DEPENDIENTES DEL INSTITUTO TECNICO PROMOCION PROFESIONAL DEL EJERCITO DURANTE LA PRESENTE GESTION EN LA  JURIDICCION CON LA TAREA DE SATISFACER LAS NECESIDADES EN MEDIOS DE VIDA Y  COMBATE DEL PERSONAL DE TROPAS, CON EL PROPOSITO DE PERMITIR A LA UNIDAD EL  CUMPLIMIENTO DE SU MISION.</center></p>
     </fieldset>
     </div>
 </div>
 <div class="grid_6">
     <div class="contenido">
     <fieldset class="centrar">
-    	<a class="botoninfo">Misión</a>
-        <hr />
-        asdasdasdasdas asd ajsdgha dgjag djhsg djhasg djhagsd jhasgdjhasg djhag sdjg
+    	
+       
+        <img src="imagenes/DSC05350.JPG" width="400" height="223" alt="SSS" />
     </fieldset>
     </div>
 </div>
