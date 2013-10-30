@@ -1,14 +1,14 @@
 <?php
 include_once("../../impresion/pdf.php");
-$titulo="Reporte de Datos de Producto";
+$titulo="Planilla de Descargo de Cuentas";
 $id=$_GET['id'];
 class PDF extends PPDF{
 	
 }
 
-include_once("../../class/productos.php");
-$productos=new productos;
-$pro=array_shift($productos->mostrar($id));
+include_once("../../class/descargo.php");
+$descargo=new descargo;
+$des=array_shift($descargo->mostrar($id));
 $pdf=new PDF("P","mm","letter");
 
 $pdf->AddPage();
