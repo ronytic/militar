@@ -29,11 +29,11 @@ include_once '../cabecerahtml.php';
                     	<td><?php campos("Materno","materno","text",$usu['materno'],0,array("required"=>"required","size"=>30));?></td>
                     </tr>
                     <tr>
-                    	<td><?php campos("Ci","ci","text",$usu['ci'],0,array("size"=>30));?></td>
-                        <td><?php campos("Grado","grado","text",$usu['grado'],0,array("size"=>30));?></td>
+                    	<td><?php campos("Ci","ci","text",$usu['ci'],0,array("required"=>"required","size"=>30));?></td>
+                        <td><?php campos("Grado","grado","text",$usu['grado'],0,array("required"=>"required","size"=>30));?></td>
                     </tr>
                     <tr>
-						<td><?php campos("Cargo","cargo","text",$usu['cargo'],0,array("size"=>30));?></td>
+						<td><?php campos("Cargo","cargo","select",array("Comandante"=>"Comandante","Jefe de Servicio"=>"Jefe de Servicio","Encargado de Clase 1"=>"Encargado de Clase 1"),0,array("required"=>"required","size"=>30),$usu['cargo']);?></td>
 						<td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"),"","",$usu['nivel']);?></td>
 					</tr>
 					<tr>

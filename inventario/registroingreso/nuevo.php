@@ -23,10 +23,10 @@ include_once $folder.'cabecerahtml.php';
 					</tr>
                     
                     <tr>
-                    	<td><?php campos("Cantidad de Entrada","cantidadentrada","number","0",0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der"))?> Kg<br><small>La Cantidad no se podrá modificar, Revise muy detalladamente la cantidad que Ingrese</small></td>
+                    	<td><?php campos("Cantidad de Entrada","cantidadentrada","number","",0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der"))?> Kg<br><small>La Cantidad no se podrá modificar, Revise muy detalladamente la cantidad que Ingrese</small></td>
                     </tr>
                     <tr>
-						<td><?php campos("Código","codigo","text","",0,"");?></td>
+						<td><?php campos("Código","codigo","text","",0,array("required"=>"required"));?></td>
 					</tr>
 					<tr><td><?php campos("Guardar","guardar","submit");?></td><td></td></tr>
 				</table>

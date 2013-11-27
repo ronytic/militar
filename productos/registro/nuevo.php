@@ -17,10 +17,10 @@ include_once '../../cabecerahtml.php';
 						<td><?php campos("Nombre","nombre","text","",1,array("required"=>"required"));?></td>
 					</tr>
 					<tr>
-						<td><?php campos("Cantidad en Kg por Soldado","cantidad","text");?> Kg.</td>
+						<td><?php campos("Cantidad en Kg por Soldado","cantidad","text","",0,array("required"=>"required"));?> Kg.</td>
 					</tr>
                     <tr>
-						<td><?php campos("Calorias","calorias","text");?></td>
+						<td><?php campos("Calorias","calorias","text","",0,array("required"=>"required"));?></td>
 					</tr>
 					<tr><td><?php campos("Guardar","guardar","submit");?></td><td></td></tr>
 				</table>

@@ -45,7 +45,7 @@ include_once $folder.'cabecerahtml.php';
                     	<td colspan="4"><?php campos("Cena","cena","select",$cena,0,array("required"=>"required"))?></td>
                     </tr>
                     <tr>
-                    	<td colspan="4"><?php campos("Cantidad Soldados","cantidad","number","0",0,array("min"=>0,"step"=>1))?></td>
+                    	<td colspan="4"><?php campos("Cantidad Soldados","cantidad","number","",0,array("min"=>0,"step"=>1))?></td>
                     </tr>
                     
 					<tr><td><?php campos("Guardar","guardar","submit");?></td><td></td></tr>

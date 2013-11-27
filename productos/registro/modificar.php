@@ -22,10 +22,10 @@ include_once '../../cabecerahtml.php';
 						<td><?php campos("Nombre","nombre","text",$pro['nombre'],1,array("required"=>"required"));?></td>
 					</tr>
 					<tr>
-						<td><?php campos("Cantidad en Kg por Soldado","cantidad","text",$pro['cantidad']);?> Kg.</td>
+						<td><?php campos("Cantidad en Kg por Soldado","cantidad","text",$pro['cantidad'],0,array("required"=>"required"));?> Kg.</td>
 					</tr>
                     <tr>
-						<td><?php campos("Calorias","calorias","text",$pro['calorias']);?></td>
+						<td><?php campos("Calorias","calorias","text",$pro['calorias'],0,array("required"=>"required"));?></td>
 					</tr>
 					<tr><td><?php campos("Modificar","guardar","submit");?></td><td></td></tr>
 				</table>

@@ -24,12 +24,12 @@ include_once $folder.'cabecerahtml.php';
             	<td><?php campos("Materno","materno","text","",0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>
-            	<td><?php campos("Ci","ci","text","",0,array("size"=>30));?></td>
-                <td><?php campos("Grado","grado","text","",0,array("size"=>30));?></td>
+            	<td><?php campos("Ci","ci","text","",0,array("required"=>"required","size"=>30));?></td>
+                <td><?php campos("Grado","grado","text","",0,array("required"=>"required","size"=>30));?></td>
             </tr>
             <tr>
-                <td><?php campos("Cargo","cargo","text","",0,array("size"=>30));?></td>
-                <td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"));?></td>
+                <td><?php campos("Cargo","cargo","select",array("Comandante"=>"Comandante","Jefe de Servicio"=>"Jefe de Servicio","Encargado de Clase 1"=>"Encargado de Clase 1"),0,array("size"=>30,"required"=>"required"),"Comandante");?></td>
+                <td><?php campos("Nivel de Usuario","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"));?></td>
             </tr>
             <tr>
                 <td colspan="2"><?php campos("Observación","observacion","textarea","","",array("rows"=>5,"cols"=>50,"size"=>30));?></td>

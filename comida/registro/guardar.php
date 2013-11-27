@@ -16,7 +16,7 @@ if(($_FILES['curriculum']['type']=="application/pdf" || $_FILES['curriculum']['t
 }
 */
 if($_FILES['foto']['name']!=""){
-	if(($_FILES['foto']['type']=="image/jpeg" || $_FILES['foto']['type']=="image/png" || $_FILES['foto']['type']=="image/gif") && $_FILES['foto']['size']<="100000"){
+	if(($_FILES['foto']['type']=="image/jpeg" || $_FILES['foto']['type']=="image/png" || $_FILES['foto']['type']=="image/gif") && $_FILES['foto']['size']<="100000000"){
 		@$foto=$_FILES['foto']['name'];
 		@copy($_FILES['foto']['tmp_name'],"../foto/".$_FILES['foto']['name']);
 	}else{
