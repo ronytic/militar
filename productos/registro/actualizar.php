@@ -8,6 +8,7 @@ extract($_POST);
 $valores=array("nombre"=>"'$nombre'",
 				"cantidad"=>"'$cantidad'",
 				"calorias"=>"'$calorias'",
+				"codunidad"=>"'$codunidad'",
 				);
 				$productos->actualizar($valores,$id);
 				$mensaje[]="SUS DATOS SE GUARDARON CORRECTAMENTE";

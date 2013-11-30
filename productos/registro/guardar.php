@@ -18,6 +18,7 @@ if(($_FILES['curriculum']['type']=="application/pdf" || $_FILES['curriculum']['t
 $valores=array(	"nombre"=>"'$nombre'",
 				"cantidad"=>"'$cantidad'",
 				"calorias"=>"'$calorias'",
+				"codunidad"=>"'$codunidad'",
 				);
 				$productos->insertar($valores);
 				$mensaje[]="SUS DATOS SE GUARDARON CORRECTAMENTE";
