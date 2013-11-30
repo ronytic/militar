@@ -32,7 +32,7 @@ include_once $folder.'cabecerahtml.php';
                     	<td><?php campos("Cantidad de Entrada","cantidadentrada","number",$inv['cantidadentrada'],0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der","readonly"=>"readonly","disabled"=>"disabled"))?> Kg<br><small>La Cantidad no se modifica por cuestión de seguridad</small></td>
                     </tr>
                     <tr>
-						<td><?php campos("Código","codigo","text",$inv['codigo'],0,"");?></td>
+						<td><?php campos("Código","codigo","select",array("Verduras"=>"Verduras"),0,"","",$inv['codigo']);?></td>
 					</tr>
 					<tr><td><?php campos("Modificar","guardar","submit");?></td><td></td></tr>
 				</table>
