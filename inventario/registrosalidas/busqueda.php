@@ -10,7 +10,7 @@ if (!empty($_POST)) {
 	$existente=$existente=="1"?'and cantidadsalida>0':'';
 	$inventario=new inventario;
 	$productos=new productos;
-	$inv=$inventario->mostrarTodo("codproductos LIKE '$codproductos' and fechasalida LIKE '$fechasalida' $existente");
+	$inv=$inventario->mostrarTodo("codproductos LIKE '$codproductos' and fechasalida LIKE '$fechasalida' $existente","fechasalida");
 	foreach($inv as $c){$i++;
 	$pro=array_shift($productos->mostrar($c['codproductos']));
 		$datos[$i]['codinventario']=$c["codinventario"];

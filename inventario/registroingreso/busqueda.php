@@ -9,7 +9,7 @@ if (!empty($_POST)) {
 	$fechaentrada=$fechaentrada!=""?$fechaentrada:"%";
 	$inventario=new inventario;
 	$productos=new productos;
-	$inv=$inventario->mostrarTodo("codproductos LIKE '$codproductos' and fechaentrada LIKE '$fechaentrada'");
+	$inv=$inventario->mostrarTodo("codproductos LIKE '$codproductos' and fechaentrada LIKE '$fechaentrada'","fechaentrada");
 	foreach($inv as $c){$i++;
 	$pro=array_shift($productos->mostrar($c['codproductos']));
 		$datos[$i]['codinventario']=$c["codinventario"];
