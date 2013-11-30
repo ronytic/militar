@@ -32,10 +32,10 @@ include_once $folder.'cabecerahtml.php';
 						<td><?php campos("Última fecha de Salida","fechasalida","date",$inv['fechasalida'],0,array("readonly"=>"readonly","disabled"=>"disabled"))?></td>
 					</tr>
                     <tr>
-                    	<td><?php campos("Cantidad de Entrada","cantidadentrada","number",$inv['cantidadentrada'],0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der","readonly"=>"readonly","disabled"=>"disabled"))?> Kg<br><small>La Cantidad no se modifica por cuestión de seguridad</small></td>
+                    	<td><?php campos("Cantidad de Entrada","cantidadentrada","number",$inv['cantidadentrada'],0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der","readonly"=>"readonly","disabled"=>"disabled"))?><br><small>La Cantidad no se modifica por cuestión de seguridad</small></td>
                     </tr>
                     <tr>
-                    	<td><?php campos("Cantidad de Almacen","cantidadalmacen","number",$inv['cantidadsalida'],0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der","readonly"=>"readonly","disabled"=>"disabled"))?> Kg<br><small>La Cantidad no se modifica por cuestión de seguridad</small></td>
+                    	<td><?php campos("Cantidad de Almacen","cantidadalmacen","number",$inv['cantidadsalida'],0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der","readonly"=>"readonly","disabled"=>"disabled"))?> <br><small>La Cantidad no se modifica por cuestión de seguridad</small></td>
                     </tr>
                     <tr>
 						<td><?php campos("Código","codigo","text",$inv['codigo'],0,array("readonly"=>"readonly","disabled"=>"disabled"));?></td>

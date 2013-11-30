@@ -9,17 +9,20 @@ class PDF extends PPDF{
 
 include_once("../../class/inventario.php");
 include_once("../../class/productos.php");
+include_once("../../class/unidad.php");
 $inventario=new inventario;
 $productos=new productos;
+$unidad=new unidad;
 $inv=array_shift($inventario->mostrar($id));
 $pro=array_shift($productos->mostrar($inv['codproductos']));
-		$pdf=new PDF("P","mm","letter");
+$uni=array_shift($unidad->mostrar($pro['codunidad']));
+$pdf=new PDF("P","mm","letter");
 $pdf->AddPage();
 $valores=array("Producto"=>$pro['nombre'],
 				"Fecha Entrada"=>fecha2Str($inv['fechaentrada']),
 				"Fecha Salida"=>fecha2Str($inv['fechasalida']),
-				"Cantidad Entrada"=>($inv['cantidadentrada']),
-				"Cantidad Inventario"=>($inv['cantidadsalida']),
+				"Cantidad Entrada"=>($inv['cantidadentrada']." ".$uni['nombre']),
+				"Cantidad Inventario"=>($inv['cantidadsalida']." ".$uni['nombre']),
 				"Codigo"=>$inv['codigo']
 			);
 
