@@ -28,9 +28,11 @@ $existente=$existente=="1"?'and cantidadsalida>0':'';
 include_once("../../class/productos.php");
 include_once("../../class/inventario.php");
 include_once("../../class/usuarios.php");
+include_once("../../class/unidad.php");
 $inventario=new inventario;
 $productos=new productos;
 $usuarios=new usuarios;
+$unidad=new unidad;
 $where="codproductos LIKE '$codproductos' and fechasalida LIKE '$fechasalida' $existente";
 /*if(!empty($fechacontrato)){
 	$where="`fechacontrato`<='$fechacontrato'";
@@ -52,19 +54,20 @@ foreach($inventario->mostrarTodos($where) as $inv){$i++;
 	$cantidade+=$inv['cantidadentrada'];
 	$cantidads+=$inv['cantidadsalida'];
 	$pro=array_shift($productos->mostrar($inv['codproductos']));
+	$uni=array_shift($unidad->mostrar($pro['codunidad']));
 	$pdf->CuadroCuerpo(10,$i,0,"R");
 	$pdf->CuadroCuerpo(60,$pro['nombre'],0,"");
 	$pdf->CuadroCuerpo(20,fecha2Str($inv['fechaentrada']),0,"");
 	$pdf->CuadroCuerpo(20,fecha2Str($inv['fechasalida']),0,"");
-	$pdf->CuadroCuerpo(20,($inv['cantidadentrada'])."Kg",0,"R");
-	$pdf->CuadroCuerpo(20,($inv['cantidadsalida'])."Kg",0,"R");
+	$pdf->CuadroCuerpo(20,($inv['cantidadentrada'])." ".$uni['abreviatura'],0,"R");
+	$pdf->CuadroCuerpo(20,($inv['cantidadsalida'])." ".$uni['abreviatura'],0,"R");
 	$pdf->CuadroCuerpo(30,($inv['codigo']),0,"L",0);
 	$pdf->ln();
 }
 $pdf->Linea();
 $pdf->CuadroCuerpoResaltar(110,"Totales",1,"R");
-$pdf->CuadroCuerpoResaltar(20,$cantidade."Kg",1,"R");
-$pdf->CuadroCuerpoResaltar(20,$cantidads."Kg",1,"R");
+$pdf->CuadroCuerpoResaltar(20,$cantidade."   ",1,"R");
+$pdf->CuadroCuerpoResaltar(20,$cantidads."   ",1,"R");
 $pdf->CuadroCuerpoResaltar(30,"",1,"R");
 //print_r($totales);
 
