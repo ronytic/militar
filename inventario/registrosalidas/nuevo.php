@@ -6,7 +6,15 @@ include_once '../../funciones/funciones.php';
 include_once("../../class/productos.php");
 $productos=new productos;
 
-$pro=todolista($productos->mostrarTodo("","nombre"),"codproductos","nombre","");
+include_once("../../class/unidad.php");
+$unidad=new unidad;
+
+$pro=($productos->mostrarTodo("","nombre"));
+$i=0;
+foreach($pro as $p){$i++;
+	$uni=array_shift($unidad->mostrar($p['codunidad']));
+	$datos[$p['codproductos']]=$p['nombre']." en ".$uni['nombre'];
+}
 $tipo=array("1"=>"Desayuno","2"=>"Sopa","3"=>"Segundo","4"=>"Postre","5"=>"Té Tarde","6"=>"Cena");
 include_once $folder.'cabecerahtml.php';
 ?>
@@ -19,11 +27,11 @@ include_once $folder.'cabecerahtml.php';
                 <form action="guardar.php" method="post" enctype="multipart/form-data">
 				<table class="tablareg">
 					<tr>
-						<td><?php campos("Producto","codproductos","select",$pro,0,array("required"=>"required"))?><small>El Producto no se podrá modificar,el Producto que selecciono</small></td>
+						<td><?php campos("Producto","codproductos","select",$datos,0,array("required"=>"required","style"=>"witdh:100%"))?><small>El Producto no se podrá modificar,el Producto que selecciono</small></td>
 					</tr>
                     
                     <tr>
-                    	<td><?php campos("Cantidad de Salida","cantidadsalida","number","",0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der"))?> Kg<br><small>La Cantidad no se podrá modificar, Revise muy detalladamente la cantidad de salida</small></td>
+                    	<td><?php campos("Cantidad de Salida","cantidadsalida","number","",0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der"))?><br><small>La Cantidad no se podrá modificar, Revise muy detalladamente la cantidad de salida</small></td>
                     </tr>
                     <tr>
                     	<td><?php campos("Fecha de Salida","fechasalida","date",date("Y-m-d"),9,array("disabled"=>"disabled","readonly"=>"readonly"))?></td>
