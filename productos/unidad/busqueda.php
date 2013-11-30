@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 	extract($_POST);
 
 	$unidad=new unidad;
-	$uni=$unidad->mostrarTodo("nombre LIKE '%$nombre%'");
+	$uni=$unidad->mostrarTodo("nombre LIKE '%$nombre%'","nombre");
 	$titulo=array("nombre"=>"Nombre","abreviatura"=>"Abreviatura");
 	listadoTabla($titulo,$uni,1,"modificar.php","eliminar.php","ver.php");
 }

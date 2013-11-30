@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 	extract($_POST);
 
 	$productos=new productos;
-	$pro=$productos->mostrarTodo("nombre LIKE '%$nombre%'");
+	$pro=$productos->mostrarTodo("nombre LIKE '%$nombre%'","nombre");
 	$titulo=array("nombre"=>"Nombre","cantidad"=>"Cantidad/Soldado","calorias"=>"Calorias");
 	listadoTabla($titulo,$pro,1,"modificar.php","eliminar.php","ver.php");
 }
