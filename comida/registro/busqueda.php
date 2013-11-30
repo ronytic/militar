@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 	extract($_POST);
 	$tipo=$tipo!=""?$tipo:"%";
 	$comida=new comida;
-	$comi=$comida->mostrarTodo("nombre LIKE '%$nombre%' and tipo LIKE '$tipo'");
+	$comi=$comida->mostrarTodo("nombre LIKE '%$nombre%' and tipo LIKE '$tipo'","nombre");
 	foreach($comi as $c){$i++;
 		$datos[$i]['codcomida']=$c["codcomida"];
 		$datos[$i]['nombre']=$c["nombre"];

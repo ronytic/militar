@@ -8,7 +8,7 @@ if (!empty($_POST)) {
 	$tipo=$tipo!=""?$tipo:"%";
 	$menucomida=new menucomida;
 	$comida=new comida;
-	$comi=$menucomida->mostrarTodo("fechacomida LIKE '%$fechacomida%'");
+	$comi=$menucomida->mostrarTodo("fechacomida LIKE '%$fechacomida%'","fechacomida");
 	foreach($comi as $c){$i++;
 		$desayuno=array_shift($comida->mostrar($c['desayuno']));
 		$sopa=array_shift($comida->mostrar($c['sopa']));
