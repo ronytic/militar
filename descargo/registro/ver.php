@@ -127,10 +127,12 @@ $cant=0;
 for($i=1;$i<=10;$i++){
 $cant+=$des['cantidad'.$i];
 $pdf->SetXY(10,$y);
+if($des['cantidad'.$i]!=0){
 $pdf->Cell(20,4,txt($des['cantidad'.$i]),$b,0,"C");
 $pdf->Cell(20,4,txt("QQ."),$b,0,"C");
 $pdf->Cell(70,4,txt($des['descripcion'.$i]),$b,0,"C");
 $pdf->Cell(30,4,txt(number_format($des['cantidad'.$i],2)),$b,0,"R");
+}
 $y+=5;
 }
 $pdf->SetXY(10,128);
@@ -143,12 +145,14 @@ $pdf->SetFont("arial","",9);
 $y=138;
 for($i=1;$i<=10;$i++){
 $pdf->SetXY(10,$y);
+if($des['cantidad'.$i]!=0){
 $pdf->Cell(20,4,txt($des['cantidad'.$i]),$b,0,"C");
 $pdf->Cell(20,4,txt("QQ."),$b,0,"C");
 $pdf->Cell(70,4,txt($des['descripcion'.$i]),$b,0,"C");
 $pdf->Cell(30,4,txt(""),$b,0,"R");
 $pdf->Cell(30,4,txt(number_format($des['cantidad'.$i],2)),$b,0,"R");
 $y+=5;
+}
 }
 
 

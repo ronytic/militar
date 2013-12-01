@@ -35,9 +35,9 @@ if($totalproducto<$cantidadsalida){
 }else{
 	
 	foreach($inventario->mostrarTodo("codproductos=$codproductos and cantidadsalida>0","fechaentrada") as $inv){
-		if((float)$cantidadsalida<(float)$inv['cantidadsalida']){
+		if((float)$cantidadsalida<=(float)$inv['cantidadsalida']){
 			//echo "si";
-			$mensaje[]="SUS SALIDA DE PRODUCTOS SE REGISTRO CORRECTAMENTE";
+			$mensaje[]="SU SALIDA DE PRODUCTO SE REGISTRO CORRECTAMENTE";
 			$cantidadsalida=$inv['cantidadsalida']-$cantidadsalida;
 			$valores=array("cantidadsalida"=>"$cantidadsalida","fechasalida"=>"'$fecha'");
 			$inventario->actualizar($valores,$inv["codinventario"]);

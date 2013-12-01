@@ -33,8 +33,8 @@ include_once '../cabecerahtml.php';
                         <td><?php campos("Grado","grado","text",$usu['grado'],0,array("required"=>"required","size"=>30));?></td>
                     </tr>
                     <tr>
-						<td><?php campos("Cargo","cargo","select",array("Comandante"=>"Comandante","Jefe de Servicio"=>"Jefe de Servicio","Encargado de Clase 1"=>"Encargado de Clase 1"),0,array("required"=>"required","size"=>30),$usu['cargo']);?></td>
-						<td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase 1"),"","",$usu['nivel']);?></td>
+						<td><?php campos("Cargo","cargo","select",array("Comandante"=>"Comandante","Jefe de Servicio"=>"Jefe de Servicio","Encargado de Clase 1"=>"Encargado de Clase I"),0,array("required"=>"required","size"=>30),$usu['cargo']);?></td>
+						<td><?php campos("Nivel","nivel","select",array("2"=>"Comandante","3"=>"Jefe de Servicio","4"=>"Encargado de Clase I"),"","",$usu['nivel']);?></td>
 					</tr>
 					<tr>
 						<td colspan="2"><?php campos("Observación","observacion","textarea",$usu['obs'],"",array("rows"=>5,"cols"=>50,"size"=>30));?></td>
