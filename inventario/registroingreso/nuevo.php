@@ -36,7 +36,7 @@ include_once $folder.'cabecerahtml.php';
                     	<td><?php campos("Cantidad de Entrada","cantidadentrada","number","",0,array("required"=>"required","min"=>0,"step"=>1,"class"=>"der"))?><br><small>La Cantidad no se podrá modificar, Revise muy detalladamente la cantidad que Ingrese</small></td>
                     </tr>
                     <tr>
-						<td><?php campos("Código","codigo","select",array("Verduras"=>"Verduras"),0,array("required"=>"required"));?></td>
+						<td><?php campos("Código","codigo","select",array("ABA-1"=>"ABA-1","ABA-2"=>"ABA-2","ABA-3"=>"ABA-3","ABA-4"=>"ABA-4"),0,array("required"=>"required"));?></td>
 					</tr>
 					<tr><td><?php campos("Guardar","guardar","submit");?></td></tr>
 				</table>

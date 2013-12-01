@@ -47,11 +47,12 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 	$tetarde=array_shift($comida->mostrar($menucomi['tetarde']));
 	$cena=array_shift($comida->mostrar($menucomi['cena']));
 
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(10,$i,0,"R");
 	$pdf->CuadroCuerpo(20,fecha2Str($menucomi['fechacomida']));
 	$pdf->CuadroCuerpo(20,"Desayuno: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$desayuno['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['desayuno']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -62,25 +63,29 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
-			
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(30,"");
 	$pdf->CuadroCuerpo(20,"Sopa: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$sopa['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['sopa']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -91,24 +96,29 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(30,"");
 	$pdf->CuadroCuerpo(20,"Segundo: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$segundo['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['segundo']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -119,24 +129,29 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(30,"");
 	$pdf->CuadroCuerpo(20,"Postre: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$postre['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['postre']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -147,24 +162,29 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(30,"");
 	$pdf->CuadroCuerpo(20,"Té Tarde: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$tetarde['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['tetarde']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -175,24 +195,29 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
-	
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(30,"");
 	$pdf->CuadroCuerpo(20,"Cena: ",0);
 	$pdf->CuadroCuerpoPersonalizado(45,$cena['nombre'],0,"",0,"B");
+	}
 	$comi=array_shift($comida->mostrar($menucomi['cena']));
 	$pdf->Ln();
 	$subtotalcalorias=0;
@@ -203,27 +228,33 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 			$subtotal=number_format($prod['cantidad']*$menucomi['cantidad'],2);
 			$totales[$comi['ingrediente'.$i]]+=$subtotal;
 			$subtotalcalorias+=$prod['calorias'];
+			if($tipo=="detallado"){
 			$pdf->CuadroCuerpo(95,"");
 			$pdf->CuadroCuerpo(40,$prod['nombre'],0,"",1);
 			$pdf->CuadroCuerpo(15,number_format($prod['cantidad'],2)." ".$uni['abreviatura'],0,"",1);
 			$pdf->CuadroCuerpo(10,$menucomi['cantidad'],0,"R",1);
 			$pdf->CuadroCuerpo(20,$subtotal." ".$uni['abreviatura'],0,"R",1);
 			$pdf->CuadroCuerpo(10,$prod['calorias'],0,"R",1);
+			}
 			$pdf->Ln();
 		}	
 	}
 	$totalcalorias+=$subtotalcalorias;
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(160,"",0,"R",0);
 	$pdf->CuadroCuerpo(20,"Total Calorias:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$subtotalcalorias,1,"R",1);
+	}
 	//$pdf->CuadroCuerpo(20,": ".$menucomi['cantidad'],0,"R");
 	
 
 
 	$pdf->Ln();
+	if($tipo=="detallado"){
 	$pdf->CuadroCuerpo(150,"",0,"R",0);
 	$pdf->CuadroCuerpo(30,"Total Calorias Diarios:",1,"R",1,8);
 	$pdf->CuadroCuerpo(10,$totalcalorias,1,"R",1);
+	}
 	$pdf->Ln();
 }
 

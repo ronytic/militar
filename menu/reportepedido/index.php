@@ -17,6 +17,7 @@ include_once "../../cabecerahtml.php";
                     <tr>
                         <td><?php campos("Fecha Inicio","fechainicio","date",date('Y-m-d'),0,array("size"=>15));?></td>
                         <td><?php campos("Fecha Fin","fechafin","date",date('Y-m-d',strtotime(date("Y-m-d")." + 7 day")),0);?></td>
+                        <td><?php campos("Tipo de Reporte","tipo","select",array("detallado"=>"Detallado","totales"=>"Totales"),0,"","detallado")?></td>
                     </tr>
                     <tr>
                         <td><?php campos("Ver Reporte","enviar","submit","",0,array("size"=>15));?></td>
