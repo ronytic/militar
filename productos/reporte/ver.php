@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
 include_once("../../impresion/pdf.php");
-$titulo="Reporte de Productos de Inventarios";
+$titulo="Reporte de Productos ";
 extract($_GET);
 class PDF extends PPDF{
 	function Cabecera(){
@@ -11,12 +11,11 @@ class PDF extends PPDF{
 		}
 		$this->Ln();
 		$this->TituloCabecera(10,"N");
-		$this->TituloCabecera(60,"Nombre Producto");
-		$this->TituloCabecera(20,"FechaEnt");
-		$this->TituloCabecera(20,"FechaSal");
-		$this->TituloCabecera(20,"Cant.Ent");
-		$this->TituloCabecera(20,"Cant.Inven");
-		$this->TituloCabecera(30,"Código");
+		$this->TituloCabecera(80,"Nombre Producto");
+		
+		$this->TituloCabecera(20,"Calorias");
+		$this->TituloCabecera(40,"Cantidad por Soldado");
+		$this->TituloCabecera(35,"Unidad de Medida");
 
 	}	
 }
@@ -26,14 +25,13 @@ $codproductos=$codproductos!=""?$codproductos:"%";
 $fechasalida=$fechasalida!=""?$fechasalida:"%";
 $existente=$existente=="1"?'and cantidadsalida>0':'';
 include_once("../../class/productos.php");
-include_once("../../class/inventario.php");
-include_once("../../class/usuarios.php");
 include_once("../../class/unidad.php");
-$inventario=new inventario;
+include_once("../../class/usuarios.php");
+$nombre=$nombre?$nombre:'%';
 $productos=new productos;
-$usuarios=new usuarios;
 $unidad=new unidad;
-$where="codproductos LIKE '$codproductos' and fechasalida LIKE '$fechasalida' $existente and activo=1";
+$usuarios=new usuarios;
+$where="nombre LIKE '%$nombre%'";
 /*if(!empty($fechacontrato)){
 	$where="`fechacontrato`<='$fechacontrato'";
 }
@@ -50,26 +48,16 @@ $pdf->AddPage();
 $totales=array();
 $cantidade=0;
 $cantidads=0;
-foreach($inventario->mostrarTodos($where,"fechaentrada") as $inv){$i++;
-	$cantidade+=$inv['cantidadentrada'];
-	$cantidads+=$inv['cantidadsalida'];
-	$pro=array_shift($productos->mostrar($inv['codproductos']));
+foreach($productos->mostrarTodos($where,"nombre") as $pro){$i++;
 	$uni=array_shift($unidad->mostrar($pro['codunidad']));
-	$pdf->CuadroCuerpo(10,$i,0,"R");
-	$pdf->CuadroCuerpo(60,$pro['nombre'],0,"");
-	$pdf->CuadroCuerpo(20,fecha2Str($inv['fechaentrada']),0,"");
-	$pdf->CuadroCuerpo(20,fecha2Str($inv['fechasalida']),0,"");
-	$pdf->CuadroCuerpo(20,($inv['cantidadentrada'])." ".$uni['abreviatura'],0,"R");
-	$pdf->CuadroCuerpo(20,($inv['cantidadsalida'])." ".$uni['abreviatura'],0,"R");
-	$pdf->CuadroCuerpo(30,($inv['codigo']),0,"L",0);
+	$pdf->CuadroCuerpo(10,$i,0,"R",1);
+	$pdf->CuadroCuerpo(80,$pro['nombre'],0,"",1);
+	
+	$pdf->CuadroCuerpo(20,$pro['calorias'],0,"C",1);
+	$pdf->CuadroCuerpo(40,$pro['cantidad'],0,"C",1);
+	$pdf->CuadroCuerpo(35,($uni['nombre']),0,"L",1);
 	$pdf->ln();
 }
-$pdf->Linea();
-$pdf->CuadroCuerpoResaltar(110,"Totales",1,"R");
-$pdf->CuadroCuerpoResaltar(20,$cantidade."   ",1,"R");
-$pdf->CuadroCuerpoResaltar(20,$cantidads."   ",1,"R");
-$pdf->CuadroCuerpoResaltar(30,"",1,"R");
-//print_r($totales);
 
 $pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
 $usu4=array_shift($usuarios->mostrarTodo("nivel=4"));

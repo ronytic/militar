@@ -30,7 +30,7 @@ $submenu=new submenu;
 		<span class="pequenol">Nombre:</span> <?php echo $us['nombre'];?> | 
 		<span class="pequenol">Usuario:</span> <?php echo $us['usuario'];?> |
 		<span class="pequenol">Hora Acceso:</span> <?php echo $_SESSION['horasesion'];?> |
-		<a href="<?php echo $folder?>usuarios/cambiarp.php?id=<?php echo $_SESSION['idusuario']?>" class="enlaceusuario">Cambiar Contraseña</a>
+		<!--<a href="<?php echo $folder?>usuarios/cambiarp.php?id=<?php echo $_SESSION['idusuario']?>" class="enlaceusuario">Cambiar Contraseña</a>-->
 		<a href="<?php echo $folder ?>login/logout.php" class="botonerror">Salir</a>
 	</div>
 </div>

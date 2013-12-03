@@ -155,7 +155,7 @@ class bd{
 	function mostrarTodos($where='',$orden=false,$cantidad=0){
 		$this->campos=array('*');
 		$orden=$orden?$orden:"cod".$this->tabla;
-		$condicion=$where?$where.'':'';
+		$condicion=$where?$where.' and activo=1':'';
 		if($cantidad==0)
 			return $this->getRecords($condicion."",$orden,0,0,0,0);
 		else

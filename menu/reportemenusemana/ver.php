@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
 include_once("../../impresion/pdf.php");
-$titulo="Reporte de SEMANA MENÚ DE COMIDA";
+$titulo="MENÚ SEMANAL DEL INSTITUO TÉCNICO PPE";
 extract($_GET);
 class PDF extends PPDF{
 	function Cabecera(){
@@ -43,7 +43,7 @@ if(!empty($tipocontrato)){
 //echo $where;
 $pdf=new PDF("L","mm","legal");
 $pdf->AddPage();
-foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
+foreach($menucomida->mostrarTodos($where,"fechacomida") as $menucomi){$i++;
 	$desayuno=array_shift($comida->mostrar($menucomi['desayuno']));
 	$sopa=array_shift($comida->mostrar($menucomi['sopa']));
 	$segundo=array_shift($comida->mostrar($menucomi['segundo']));
@@ -52,16 +52,16 @@ foreach($menucomida->mostrarTodos($where) as $menucomi){$i++;
 	$cena=array_shift($comida->mostrar($menucomi['cena']));
 
 	
-	$pdf->CuadroCuerpo(10,$i,0,"R");
-	$pdf->CuadroCuerpo(20,capitalizar(strftime("%A",strtotime($menucomi['fechacomida']))));
-	$pdf->CuadroCuerpo(20,fecha2Str($menucomi['fechacomida']));
-	$pdf->CuadroCuerpo(42,$desayuno['nombre'],0);
-	$pdf->CuadroCuerpo(42,$sopa['nombre'],0);
-	$pdf->CuadroCuerpo(42,$segundo['nombre'],0);
-	$pdf->CuadroCuerpo(42,$postre['nombre'],0);
-	$pdf->CuadroCuerpo(42,$tetarde['nombre'],0);
-	$pdf->CuadroCuerpo(42,$cena['nombre'],0);
-	$pdf->CuadroCuerpo(20,$menucomi['cantidad'],0,"R");
+	$pdf->CuadroCuerpo(10,$i,0,"R",1);
+	$pdf->CuadroCuerpo(20,utf8_encode(capitalizar(strftime("%A",strtotime($menucomi['fechacomida'])))),0,"",1);
+	$pdf->CuadroCuerpo(20,fecha2Str($menucomi['fechacomida']),0,"",1);
+	$pdf->CuadroCuerpo(42,$desayuno['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(42,$sopa['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(42,$segundo['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(42,$postre['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(42,$tetarde['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(42,$cena['nombre'],0,"",1);
+	$pdf->CuadroCuerpo(20,$menucomi['cantidad'],0,"R",1);
 	
 
 
